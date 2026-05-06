@@ -1,0 +1,52 @@
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.json-view {
+  background: #0f172a;
+  color: #e2e8f0;
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  border-radius: 8px;
+  padding: 10px;
+  max-height: 280px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+.json-view .k { color: #7dd3fc; }
+.json-view .s { color: #86efac; }
+.json-view .n { color: #fca5a5; }
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulse-ring {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.5); }
+  50%       { box-shadow: 0 0 0 8px rgba(99, 102, 241, 0); }
+}
+
+.step-active {
+  animation: pulse-ring 1.4s infinite;
+}
+
+@keyframes slide-in {
+  from { opacity: 0; transform: translateX(20px); }
+  to   { opacity: 1; transform: none; }
+}
+
+.slide-in {
+  animation: slide-in 0.25s ease;
+}
+
+.connector {
+  flex: 1;
+  height: 2px;
+  background: #e5e7eb;
+  transition: background 0.4s;
+}
+
+.connector.done {
+  background: #22c55e;
+}
